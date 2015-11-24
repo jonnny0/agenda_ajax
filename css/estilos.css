@@ -1,0 +1,86 @@
+/*Autor: Antonio Espinosa Jiménez*/
+
+/*para la imagen de fondo*/
+body {
+    background-image: url("../imagenes/fondo.png");
+    background-attachment: fixed;
+}
+
+/*los headers centrados*/
+h1, h2 {
+    text-align: center;
+}
+
+/*el formato de los botones de arriba*/
+#div_botones {
+    margin: 0 auto;
+    width: 40%;
+    background-color: orange;
+    padding-bottom: 2%;
+    padding-top: 0.2%;
+    text-align: center;
+}
+
+/*donde se colocará el contenido principal*/
+#div_contenido {
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 1%;
+    padding-bottom: 2%;
+    width: 40%;
+    background-color: green;
+}
+
+
+/*inicio formato de la tabla*/
+tr {
+    display:table-row; 
+    padding:0.5em; 
+    background:#fff; 
+    margin: 5px auto;
+    width:300px;
+} 
+
+td, th {
+    display:table-cell; 
+    padding:0.2em;
+}
+
+table, tbody, tr, td, th {
+    display:block;
+} 
+
+th {
+    background:#abc;
+}
+
+td {
+    color:#00a;
+}
+
+td:before {
+    content:"Nombre: "; 
+    font-style:italic; 
+    color:#c00;
+}
+
+td + td:before {
+    content:"Teléfono: ";
+}
+
+td + td + td:before {
+    content:"";
+}
+
+td + td + td + td:before {
+    content:"";
+}
+
+tr:hover {
+    background:#abc;
+}
+
+#boton_accion_modificar {
+    margin-right: 5px;
+}
+/*fin formato de la tabla*/

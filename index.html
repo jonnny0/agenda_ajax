@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Agenda AJAX</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/estilos.css">
+        <script type="text/javascript" src="js/script.js"></script>      
+    </head>
+
+    <body>
+        <h1>Agenda AJAX</h1>
+
+        <div id="div_botones">
+            <h2>Acciones</h2>                
+            <button id="boton_accion_insertar" onclick="mostrar_insertar();">Insertar</button>
+            <button id="boton_accion_consultar" onclick="mostrar_consultar();">Consultar</button>            
+        </div>   
+
+        <div id="div_contenido" hidden>
+        </div>
+
+        <div id="div_insertar" hidden>
+
+            <h2>Nuevo Contacto</h2>
+
+            <form id="formulario_insertar" onsubmit="return validar_insertar()">
+
+                <table id="tabla_insertar">                    
+                    <tr>
+                        <th>DNI:<input id="input_insertar_DNI" type="text" size="9" maxlength="9" required></th>
+                        <td> <input id="input_insertar_nombre" type="text" size="9" required></td>
+                        <td><input id="input_insertar_telefono" type="text" size="9" maxlength="9" required></td>
+                        <td><button id="boton_insertar" >Insertar</button>
+                        <input type="reset"></td>
+                    </tr>
+                </table>
+
+                <br/>
+            </form>
+        </div>
+
+        <div id="div_modificar" hidden>
+
+            <h2>Modificar un contacto</h2>
+
+            <form id="formulario_modificar" onsubmit="return validar_modificar()">
+
+                <table id="tabla_modificar">                    
+                    <tr>
+                        <th id="head_modificar_DNI"></th>
+                        <td><input id="input_modificar_nombre" type="text" size="9" required></td>
+                        <td><input id="input_modificar_telefono" type="text" size="9" maxlength="9" required></td>
+                        <td><button type="submit" id="boton_modificar">Modificar</button></td>
+                    </tr>
+                </table>
+
+            </form>
+        </div>
+
+        <div id="div_consultar" hidden>
+            
+            <h2>Buscar un contacto</h2>
+
+            <input id="input_buscador" type="text" onkeyup="consultar(this.value)">
+            <button id="boton_buscador" onclick="consultar($('#input_buscador').val())">Buscar por DNI</button>
+
+            <h2>Contactos almacenados</h2>
+
+            <table id="tabla_consultar">
+            </table>
+            
+        </div>
+    </body>
+</html>

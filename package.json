@@ -1,0 +1,24 @@
+{
+  "name": "agenda_ajax",
+  "version": "1.0.0",
+  "description": "Agenda en AJAX",
+  "main": "servidor.js",
+  "scripts": {
+	"start": "node servidor.js"
+  },
+  "dependencies": {
+    "express": "^4.13.3",
+    "cors": "^2.7.1"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jonnny0/agenda_ajax.git"
+  },
+  "author": "Antonio Espinosa Jiménez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jonnny0/agenda_ajax/issues"
+  },
+  "homepage": "https://github.com/jonnny0/agenda_ajax"
+}
