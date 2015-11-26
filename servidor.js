@@ -18,6 +18,9 @@ var puerto = process.env.PORT || 8080;
 //incluyo express
 var express = require('express');
 
+//incluyo path, para la parte cliente
+var path = require("path");
+
 var app = express();
 
 //La base de datos donde almacenará los contactos
@@ -181,6 +184,9 @@ app.delete('/borrar/:nombre', function (req, res) {
 
 //Escucho peticiones
 app.listen(puerto);
+
+//Para servir las páginas web de la parte cliente
+app.use(express.static(path.join(__dirname, '/cliente')));
 
 //Muestro el log de servidor ON
 console.log('Servidor en http://127.0.0.1:' + puerto + '/');
