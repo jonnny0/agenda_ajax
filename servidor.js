@@ -125,19 +125,22 @@ app.put('/insertar/:dni/:nombre/:telefono', function (req, res) {
 
 /**
  * Si se especifica consultar en la petición GET 
- * Si existe un registro con un dni empezando con esa cadena, lo añado a registros entero.
+ * Si existe un registro con un dni empezando con esa cadena o que empiece por ese nombre, lo añado a registros entero.
  * Es posible que devuelva varios registros.
  * 
  * @param req el parámetro de entrada
  * @param res el parámetro de salida
  */
-app.get('/consultar/:dni', function (req, res) {
+app.get('/consultar/:datos', function (req, res) {
     var registros = {};
 
     //Recorro la bd en busca de que el nombre empiece con la cadena pasada,
     //si la encuentra la añade a registros para devolverlo
     for (dni in bd) {
-        if (dni.indexOf(req.params.dni) == 0) {
+    	var usuario = bd[dni];
+        if (usuario['nombre'].indexOf(req.params.datos) == 0) {
+            registros[dni] = bd[dni];
+        }else if (dni.indexOf(req.params.datos) == 0) {
             registros[dni] = bd[dni];
         }
     }
